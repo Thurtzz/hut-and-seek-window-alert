@@ -5,11 +5,13 @@ Across 122 games (Weeks 1–8), 7,519 pass plays and 34,368 routes, **1 in 3 rec
 How it works: for every frame (10 per second) from snap to throw, we measure the distance from each route runner to the closest defender and count him as "open" at 3+ yards, starting 1 second after the snap so pre-snap cushion doesn't count.
 The fine print: 3 yards is our working definition of "open," not an official one, and distance alone can't tell us what the quarterback saw or why he threw where he did.
 
+### 👉 [Open the interactive visual (all 32 teams)](https://thurtzz.github.io/hut-and-seek-window-alert/)
+
 ![Window Alert tracking replay](output/window_alert.png)
 
 ![Window lifetime by position](output/window_by_position.png)
 
-[Per-receiver metrics](output/window_metrics.csv) · [Per-game summary](output/game_summary.csv) · [Featured play timeline](output/featured_window_timeline.csv) · [Colab notebook](HUT_AND_SEEK_ALL_GAMES_COLAB.ipynb)
+[Per-receiver metrics](output/window_metrics.csv) · [Per-game summary](output/game_summary.csv) · [Featured play timeline](output/featured_window_timeline.csv) · [Interactive visual source](index.html) · [Colab notebook](HUT_AND_SEEK_ALL_GAMES_COLAB.ipynb)
 
 ## Run it
 

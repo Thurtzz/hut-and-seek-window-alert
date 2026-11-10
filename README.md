@@ -1,7 +1,7 @@
 # 🏈 HUT & SEEK — Window Alert
 
 **A receiver can be wide open and still never see the ball.** HUT & SEEK: Window Alert uses 2021 NFL Next Gen Stats tracking to time how long WRs, TEs and RBs stay open before the throw, giving broadcasters a replay-ready "the window was right there" graphic and giving coaches and scouts a way to spot receivers who win early but get left waiting.
-Across 122 games (Weeks 1–8), 7,519 pass plays and 34,368 routes, **1 in 3 receivers (33.7%) got 3+ yards of space and then lost it before the ball came out**, like Parris Campbell (IND vs SEA), who was open for 6.3 straight seconds before his window closed right at the throw.
+Across 122 games (Weeks 1–8), 7,519 pass plays and 34,368 routes, **1 in 3 receivers (33.7%) got 3+ yards of space and then lost it before the ball came out**, like Blake Jarwin (DAL vs TB), who had 3+ yards of space for 3 straight seconds mid-route before the defender closed to 2.4 yards right at the throw, and he still caught it for 6 yards.
 How it works: for every frame (10 per second) from snap to throw, we measure the distance from each route runner to the closest defender and count him as "open" at 3+ yards, starting 1 second after the snap so pre-snap cushion doesn't count.
 The fine print: 3 yards is our working definition of "open," not an official one, and distance alone can't tell us what the quarterback saw or why he threw where he did.
 

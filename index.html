@@ -5,7 +5,8 @@
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <meta name="theme-color" content="#fff4df" />
 <meta name="description" content="HUT & SEEK — an interactive visual concept for a playful NFL scouting research lab." />
-<title>HUT & SEEK — Window Alert | NFL Big Data Bowl 2026</title>
+<title>HUT & SEEK — Window Clock | Tiffany Hurtado · NYU Tandon</title>
+<meta name="author" content="Tiffany Hurtado" />
 <style>
 /* Offline-safe preview: heavyweight poster-display fallback; no external font dependency. */
 :root{--green:#11372b;--orange:#ea4c13;--cream:#fff4df;--yellow:#ffc62d;--purple:#a269aa;--ink:#172e26}
@@ -206,9 +207,32 @@ h2.big{
 .hut-panel .wl-grid{margin-top:20px}
 .hut-panel .huddles-verdict{margin-top:10px}
 @media(max-width:650px){.hut-tabs{gap:6px}.hut-tab{font-size:12px;padding:12px 5px}.hut-tab span{display:none}}
+</style><style>
+.creator-credit{background:#fff3dc;color:#163b2a;border-top:4px solid #153b2c;border-bottom:4px solid #153b2c;padding:25px clamp(18px,5vw,75px)}
+.creator-credit__inner{max-width:1200px;margin:0 auto}
+.creator-credit__label{font:900 11px ui-monospace,'Courier New',monospace;letter-spacing:.13em;color:#bc561d;margin-bottom:11px}
+.creator-credit__identity{display:flex;align-items:center;flex-wrap:wrap;gap:16px}
+.creator-credit__name{font:900 clamp(26px,3.4vw,46px)/1 Impact,'Arial Black',sans-serif;letter-spacing:.014em}
+.creator-credit__divider{font-size:24px;color:#e45d22}
+.creator-credit__title{font:700 clamp(12px,1.3vw,15px)/1.6 ui-monospace,'Courier New',monospace}
+.creator-credit__title strong{font-weight:900}
+.foot{align-items:center}.foot>span:nth-child(2){font:800 11px/1.55 ui-monospace,'Courier New',monospace;max-width:450px;text-align:center}
+@media(max-width:720px){.preview-toolbar .author-topline{font-size:10px;text-align:right}.creator-credit__divider{display:none}.creator-credit__identity{gap:8px;flex-direction:column;align-items:flex-start}.foot>span:nth-child(2){text-align:left}}
+@media(max-width:500px){.preview-toolbar .author-topline{display:none}}
+</style>
+<style>
+.hut-extra-metrics{margin:18px 0 22px;padding:22px;background:#f8e9c9;color:#153d2e;border:3px solid #173f30;border-radius:13px;box-shadow:5px 5px 0 #edb93d}
+.hut-extra-metrics .hut-eyebrow{font:900 12px 'Courier New',monospace;letter-spacing:.12em;color:#885024}
+.hut-extra-metrics h3{font:900 clamp(25px,4vw,43px)/1 Impact,'Arial Black',sans-serif;margin:10px 0 17px}
+.hut-extra-metrics .hut-metric-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.hut-extra-metrics .hut-metric-item{background:#fff9e8;border:2px solid #173f30;border-radius:8px;padding:13px}
+.hut-extra-metrics .hut-metric-item strong{display:block;font:900 clamp(22px,3vw,35px) Impact,'Arial Black',sans-serif}
+.hut-extra-metrics .hut-metric-item span{font:700 11px/1.4 'Courier New',monospace}
+.hut-extra-metrics .hut-description{font:700 12px/1.6 'Courier New',monospace;margin:15px 0 0}
+@media(max-width:650px){.hut-extra-metrics .hut-metric-grid{grid-template-columns:1fr}}
 </style></head>
 <body>
-<div class="preview-toolbar"><span>HUT & SEEK · WINDOW ALERT · 2021 NFL TRACKING</span><span>ONE GAME · 91 PLAYS · 430 RECEIVER-PLAY OBSERVATIONS</span><button type="button" id="about-preview">ABOUT THIS DEMO ⓘ</button></div>
+<div class="preview-toolbar"><span>HUT & SEEK · WINDOW ALERT · 2021 NFL TRACKING</span><span class="author-topline">CREATED BY TIFFANY HURTADO · NYU TANDON</span><button type="button" id="about-preview">ABOUT THIS DEMO ⓘ</button></div>
 <div class="mobile-nav"><button data-open="study">WINDOW ALERT</button><button data-open="playbook">WINDOW CLOCK</button><button data-open="findings">FINDINGS</button><button data-open="resources">RESOURCES</button></div>
 <main>
 <section class="art-shell" aria-label="HUT & SEEK exact reference homepage illustration">
@@ -260,6 +284,18 @@ h2.big{
 <button class="hit" aria-label="Open case file" data-open="casefile" style="left:1%;top:84.1%;width:34%;height:15.6%"></button>
 </div></section>
 
+
+<section class="creator-credit" aria-label="Project creator">
+  <div class="creator-credit__inner">
+    <div class="creator-credit__label">PROJECT CREATOR / NFL BIG DATA BOWL</div>
+    <div class="creator-credit__identity">
+      <span class="creator-credit__name">TIFFANY HURTADO</span>
+      <span class="creator-credit__divider" aria-hidden="true">✦</span>
+      <span class="creator-credit__title">M.S. Cybersecurity Candidate<br><strong>NYU Tandon School of Engineering</strong></span>
+    </div>
+  </div>
+</section>
+
 <section id="window-live" aria-labelledby="wl-heading">
 <div class="hut-tabs" role="tablist" aria-label="Explore the Window Clock case">
 <button class="hut-tab" role="tab" aria-selected="true" aria-controls="hut-alert" data-hut="alert">01 / WINDOW ALERT</button>
@@ -271,16 +307,34 @@ h2.big{
 <div class="wl-metrics"><div class="wl-metric"><strong>33.7%</strong><span>11,594 OF 34,368 RECEIVER-PLAY OBSERVATIONS MET THE DATASET-WIDE WINDOW-CLOSURE DEFINITION</span></div><div class="wl-metric"><strong>32</strong><span>NFL TEAMS · 122 GAMES · WEEKS 1–8, 2021</span></div><div class="wl-metric"><strong>2.37 YD</strong><span>BLAKE JARWIN'S NEAREST-DEFENDER SEPARATION AT RELEASE</span></div></div>
 <div class="wl-play"><b>ON THE FILM:</b> DAL vs TB · Sept. 9, 2021 · Game 2021090900 · Play 1425 · Blake Jarwin (TE) · Pass completed to Blake Jarwin for 6 yards</div>
 <div class="wl-grid"><div class="wl-panel" id="film-room"><h3>01 / THE FILM ROOM</h3><svg id="wl-field" viewBox="0 0 560 330" role="img" aria-label="Animated positions of Blake Jarwin and his nearest defender from the actual NFL tracking data"><rect x="0" y="0" width="560" height="330" rx="8" fill="#174c3a"/><g id="wl-lines" stroke="#e7f4e6" stroke-opacity=".3" stroke-width="1"></g><path id="wl-route" fill="none" stroke="#ffcf37" stroke-width="3" stroke-dasharray="5 5"/><line id="wl-gap" stroke="#ffcf37" stroke-width="3" stroke-dasharray="4 4"/><circle id="wl-rec" r="10" fill="#ffce37" stroke="#17362a" stroke-width="3"/><circle id="wl-def" r="10" fill="#b39aff" stroke="#17362a" stroke-width="3"/><text id="wl-rec-label" fill="white" font-size="13" font-family="monospace">JARWIN</text><text id="wl-def-label" fill="white" font-size="13" font-family="monospace">NEAREST DEFENDER</text></svg><div class="wl-note">● Yellow: Blake Jarwin (TE) &nbsp; ● Purple: nearest defender at that frame. Zoomed to the observed route area; not full-field broadcast footage.</div><div class="wl-controls"><button id="wl-toggle" type="button" aria-label="Play or pause replay">▶ PLAY</button><input id="wl-scrub" type="range" min="0" max="56" step="1" value="0" aria-label="Replay frame"/><span id="wl-time" class="wl-readout">0.0 s</span><button id="wl-restart" type="button">↺ RESTART</button></div></div><div class="wl-panel"><h3>02 / THE WINDOW CLOCK</h3><svg id="wl-chart" viewBox="0 0 450 300" role="img" aria-label="Real separation timeline showing a three-yard threshold"><rect x="40" y="20" width="390" height="230" fill="#123e32" rx="4"/><g id="wl-chart-grid"></g><path id="wl-line" fill="none" stroke="#ffd33d" stroke-width="3"/><line id="wl-threshold" stroke="#ff7a5d" stroke-dasharray="7 5" stroke-width="2"/><line id="wl-marker" stroke="white" stroke-width="2"/><circle id="wl-dot" r="6" fill="#fff4d9" stroke="#e5a12e" stroke-width="2"/><text x="43" y="275" fill="#d9e8da" font-size="12" font-family="monospace">SNAP</text><text x="428" y="275" text-anchor="end" fill="#d9e8da" font-size="12" font-family="monospace">PASS RELEASE</text></svg><p class="wl-readout" id="wl-distance">SEPARATION: —</p><p class="wl-readout" id="wl-window">WINDOW STATUS: —</p><p class="wl-note">Experimental window: nearest defender ≥ 3 yards away. This is not a verified measure of an open passing lane.</p></div></div>
-<div class="wl-explain">🔎 HUDDLES' TAKEAWAY: In this completed pass, Jarwin had a separation window earlier in the play, but his nearest defender was just 2.37 yards away at release. The window closed — the completion still happened. Separation alone doesn't tell the whole story.</div>
+<section class="hut-extra-metrics" aria-label="Film Room play metrics">
+<div class="hut-eyebrow">02 / THE FILM ROOM · FEATURED PLAY 1425</div>
+<h3>THE EVIDENCE, FRAME BY FRAME.</h3>
+<div class="hut-metric-grid">
+<div class="hut-metric-item"><strong>5.37 YD</strong><span>PEAK NEAREST-DEFENDER SEPARATION</span></div>
+<div class="hut-metric-item"><strong>2.37 YD</strong><span>SEPARATION AT PASS RELEASE</span></div>
+<div class="hut-metric-item"><strong>0.7 SEC</strong><span>TIME SINCE LAST QUALIFYING OPEN WINDOW AT RELEASE</span></div>
+</div>
+<p class="hut-description">BLAKE JARWIN · DAL VS TB · SEPT 9, 2021 · COMPLETED FOR 6 YARDS. The replay is based on 57 recorded tracking frames (10 Hz). A 3-yard nearest-defender gap is an exploratory proxy, not proof of a safe passing lane.</p>
+</section><div class="wl-explain">🔎 HUDDLES' TAKEAWAY: In this completed pass, Jarwin had a separation window earlier in the play, but his nearest defender was just 2.37 yards away at release. The window closed — the completion still happened. Separation alone doesn't tell the whole story.</div>
 <p class="wl-source">SOURCE: Organizers' 2021 NFL Big Data Bowl tracking, plays, players and PFF scouting CSVs. Featured play: 57 tracking frames at 10 Hz. Sample: 91 passing plays, 430 receiver-play observations in one game. This is a replay of recorded 2021 tracking positions, NOT a live 2026 NFL feed. Defensive assignments and passing-lane safety cannot be inferred from nearest-defender distance alone.</p>
-<div id="huddles-takeaway" class="huddles-verdict">
+<section class="hut-extra-metrics" aria-label="Huddles expanded dataset findings">
+<div class="hut-eyebrow">03 / HUDDLES' TAKEAWAY · LEAGUE-WIDE CASE FILE</div>
+<h3>THE NUMBERS BEHIND THE CLUE.</h3>
+<div class="hut-metric-grid">
+<div class="hut-metric-item"><strong>33.7%</strong><span>ALL POSITIONS · 11,594 / 34,368</span></div>
+<div class="hut-metric-item"><strong>34.5%</strong><span>TIGHT ENDS · 2,739 / 7,948</span></div>
+<div class="hut-metric-item"><strong>33.7%</strong><span>WIDE RECEIVERS · 6,828 / 20,253</span></div>
+</div>
+<p class="hut-description">RUNNING BACKS: 2,027 / 6,167 (32.9%). Across 122 games and all 32 teams, about one in three receiver-play observations met the expanded window-closure rule. These are receiver-play observations, not unique passes or failed plays. The full-dataset rule begins qualifying windows one second after the snap, so do not directly compare its rate with the original single-game result.</p>
+</section><div id="huddles-takeaway" class="huddles-verdict">
 <div class="verdict-tag">03 / HUDDLES' TAKEAWAY · CASE CLOSED?</div>
 <h2>THE WINDOW CLOSED.<br><em>THE PASS CONNECTED.</em></h2>
 <p>Blake Jarwin had <b>2.37 yards</b> of nearest-defender separation at release — yet the pass was <b>completed for 6 yards</b>. Across the expanded dataset, <b>11,594 of 34,368 receiver-play observations (33.7%)</b> met the updated window-closure definition. The originally featured Dallas–Tampa Bay game separately showed 156 of 430 (36.3%) under an earlier rule; those percentages are not directly comparable.</p>
 <p class="verdict-foot">THE CLUE: A closing separation window does not automatically mean a failed play. This is one game's descriptive analysis, not a prediction of pass safety or causation.</p>
 <a href="#film-room">↺ REWATCH THE EVIDENCE</a>
 </div></section>
-</main><footer class="foot"><span>HUT & SEEK™ — THE NFL INSIGHT LAB</span><span>GOOD QUESTIONS. BETTER EVIDENCE. 🏈</span></footer>
+</main><footer class="foot"><span>HUT & SEEK™ — THE NFL INSIGHT LAB</span><span>CREATED BY <strong>TIFFANY HURTADO</strong> · M.S. CYBERSECURITY CANDIDATE · NYU TANDON SCHOOL OF ENGINEERING</span><span>GOOD QUESTIONS. BETTER EVIDENCE. 🏈</span></footer>
 <div class="dialog-backdrop" id="overlay"><div class="dialog" role="dialog" aria-modal="true" aria-labelledby="modal-title" tabindex="-1"><button type="button" class="exit" id="close" aria-label="Close dialog">×</button><div class="stamp" id="modal-stamp">CASE FILE 001</div><h2 id="modal-title">WHAT ARE WE MISSING?</h2><p id="modal-desc"></p><div id="modal-details"></div><p class="minor">HUT & SEEK · DESIGN PREVIEW ONLY</p></div></div>
 <script>
 (()=>{

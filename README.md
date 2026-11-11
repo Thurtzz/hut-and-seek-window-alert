@@ -7,6 +7,12 @@ The fine print: 3 yards is our working definition of "open," not an official one
 
 ### 👉 [Open the interactive visual (all 32 teams)](https://thurtzz.github.io/hut-and-seek-window-alert/) (backup link: [open via HTML preview](https://htmlpreview.github.io/?https://github.com/Thurtzz/hut-and-seek-window-alert/blob/main/index.html))
 
+## 🎬 Explore the interactive site
+
+- **Film Room replays:** watch two real tracking replays, Blake Jarwin (DAL vs TB) and Parris Campbell (IND vs SEA), with the players moving on the field, a synced separation chart, and Play/Pause controls.
+- **Complete case library:** search and filter all 34,368 receiver-play observations from 122 games and all 32 teams by team, game, player, or window status, and open any one as a detailed case file. Plays with frame-by-frame data in the site are animated; the rest show their computed metrics.
+- **Team explorer and Huddles' Takeaway:** compare window closures by team and by position (WR, TE, RB).
+
 ![Window Alert tracking replay](output/window_alert.png)
 
 ![Window lifetime by position](output/window_by_position.png)

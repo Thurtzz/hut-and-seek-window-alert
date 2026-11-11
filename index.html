@@ -777,7 +777,6 @@ games();players();selection();const original=rows.find(r=>r[0]==='2021090900'&&r
  const teamRates=[...teamStats].map(([k,v])=>[k,v.closed/v.n]);
  const rateVals=teamRates.map(x=>x[1]);
  const rMin=Math.min(...rateVals),rMax=Math.max(...rateVals);
- const ordinal=n=>n+(['th','st','nd','rd'][(n%100>10&&n%100<14)?0:(n%10<4?n%10:0)]||'th');
  const teamRank=team=>{const r=teamStats.get(team);const v=r.closed/r.n;return 1+rateVals.filter(x=>x>v).length;};
  const root=document.createElement('section');root.id='hut-dynamic-takeaway';root.setAttribute('aria-label','Huddles takeaway for selected case');
  root.innerHTML=`
@@ -820,7 +819,7 @@ games();players();selection();const original=rows.find(r=>r[0]==='2021090900'&&r
   }
   const ts=teamStats.get(team),ps=posStats.get(position);
   $('ht-team-rate').textContent=pct(ts.closed,ts.n);
-  $('ht-team-label').textContent=`${team} OFFENSE · ${ts.closed.toLocaleString()} / ${ts.n.toLocaleString()} · ${ordinal(teamRank(team)).toUpperCase()}-HIGHEST OF ${teamStats.size} TEAMS (RANGE ${(100*rMin).toFixed(1)}–${(100*rMax).toFixed(1)}%)`;
+  $('ht-team-label').textContent=`${team} OFFENSE · ${ts.closed.toLocaleString()} / ${ts.n.toLocaleString()} · #${teamRank(team)} OF ${teamStats.size} IN CLOSURE RATE (RANGE ${(100*rMin).toFixed(1)}–${(100*rMax).toFixed(1)}%)`;
   $('ht-position-rate').textContent=pct(ps.closed,ps.n);
   $('ht-position-label').textContent=`${(posLabels[position]||position).toUpperCase()} · ${ps.closed.toLocaleString()} / ${ps.n.toLocaleString()}`;
   $('ht-league-rate').textContent=pct(league.closed,league.n);

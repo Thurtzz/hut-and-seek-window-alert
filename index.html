@@ -338,7 +338,7 @@ h2.big{
 <a class="case-card film" href="#film-room"><small>02 / THE REPLAY</small><strong>THE<br>FILM ROOM</strong><span>Watch the real play unfold.</span><i>◉</i></a>
 <a class="case-card takeaway" href="#huddles-takeaway"><small>03 / THE VERDICT</small><strong>HUDDLES'<br>TAKEAWAY</strong><span>The window closed. The pass connected.</span><i>☝</i></a>
 </div>
-<div class="case-ribbon" aria-label="Verified one-game results"><span><b>36.3%</b> WINDOW CLOSURES</span><span><b>91</b> PASSING PLAYS</span><span><b>430</b> RECEIVER-PLAY OBSERVATIONS</span></div>
+<div class="case-ribbon" aria-label="Results across all 122 games"><span><b>33.7%</b> WINDOW CLOSURES</span><span><b>7,519</b> PASSING PLAYS</span><span><b>34,368</b> RECEIVER-PLAY OBSERVATIONS</span></div>
 <!-- Deliberately subtle chalk accents on the green playbook space by the scout clipboard. -->
 <div class="chalk-accent" aria-hidden="true">
 <svg viewBox="0 0 360 145" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -359,16 +359,16 @@ h2.big{
  </g>
 </svg></div>
 <!-- Clickable areas align directly to the original 1536 x 1024 reference -->
-<button class="hit" aria-label="Open the study" data-open="study" style="left:50.6%;top:.7%;width:9.1%;height:7.3%"></button>
-<button class="hit" aria-label="Open the playbook" data-open="playbook" style="left:59.4%;top:.7%;width:9.3%;height:7.3%"></button>
-<button class="hit" aria-label="View findings" data-open="findings" style="left:69%;top:.7%;width:8.6%;height:7.3%"></button>
+<button class="hit" aria-label="Go to Window Alert" data-goto="alert" style="left:50.6%;top:.7%;width:9.1%;height:7.3%"></button>
+<button class="hit" aria-label="Go to the Film Room" data-goto="film" style="left:59.4%;top:.7%;width:9.3%;height:7.3%"></button>
+<button class="hit" aria-label="Go to Huddles' Takeaway" data-goto="takeaway" style="left:69%;top:.7%;width:8.6%;height:7.3%"></button>
 <button class="hit" aria-label="Open research resources" data-open="resources" style="left:78.1%;top:.7%;width:9%;height:7.3%"></button>
 <button class="hit" aria-label="Explore the lab" data-open="lab" style="left:87.2%;top:.5%;width:12%;height:7%"></button>
-<button class="hit" aria-label="Explore the findings" data-open="findings" style="left:2.8%;top:50.5%;width:21.4%;height:6.5%"></button>
+<button class="hit" aria-label="Explore the findings in Huddles' Takeaway" data-goto="takeaway" style="left:2.8%;top:50.5%;width:21.4%;height:6.5%"></button>
 <button class="hit" aria-label="See the playbook" data-open="playbook" style="left:25%;top:50.5%;width:18%;height:6.5%"></button>
-<button class="hit" aria-label="The Hunch: open research question" data-open="study" style="left:1.2%;top:60.5%;width:29.9%;height:22%"></button>
-<button class="hit" aria-label="The Film Room: open methods and evidence" data-open="playbook" style="left:32.2%;top:60.5%;width:33.9%;height:22%"></button>
-<button class="hit" aria-label="The Takeaway: open findings" data-open="findings" style="left:66.9%;top:60.5%;width:31.8%;height:22%"></button>
+<button class="hit" aria-label="Window Alert: go to the question" data-goto="alert" style="left:1.2%;top:60.5%;width:29.9%;height:22%"></button>
+<button class="hit" aria-label="The Film Room: go to the replays and case library" data-goto="film" style="left:32.2%;top:60.5%;width:33.9%;height:22%"></button>
+<button class="hit" aria-label="Huddles' Takeaway: go to the findings" data-goto="takeaway" style="left:66.9%;top:60.5%;width:31.8%;height:22%"></button>
 <button class="hit" aria-label="Open case file" data-open="casefile" style="left:1%;top:84.1%;width:34%;height:15.6%"></button>
 </div></section>
 
@@ -405,7 +405,7 @@ h2.big{
 </div>
 <p class="hut-description">BLAKE JARWIN · DAL VS TB · SEPT 9, 2021 · COMPLETED FOR 6 YARDS. The Jarwin replay is based on 57 recorded tracking frames (10 Hz). A 3-yard nearest-defender gap is an exploratory proxy, not proof of a safe passing lane.</p>
 </section><div class="wl-explain">🔎 HUDDLES' TAKEAWAY: In this completed pass, Jarwin had a separation window earlier in the play, but his nearest defender was just 2.37 yards away at release. The window closed — the completion still happened. Separation alone doesn't tell the whole story.</div>
-<p class="wl-source">SOURCE: Organizers' 2021 NFL Big Data Bowl tracking, plays, players and PFF scouting CSVs. Featured play: 57 tracking frames at 10 Hz. Sample: 91 passing plays, 430 receiver-play observations in one game. This is a replay of recorded 2021 tracking positions, NOT a live 2026 NFL feed. Defensive assignments and passing-lane safety cannot be inferred from nearest-defender distance alone.</p>
+<p class="wl-source">SOURCE: Organizers' 2021 NFL Big Data Bowl tracking, plays, players and PFF scouting CSVs. Featured replay: 57 tracking frames at 10 Hz (Blake Jarwin). Full analysis: 7,519 passing plays and 34,368 receiver-play observations across 122 games. This is a replay of recorded 2021 tracking positions, NOT a live 2026 NFL feed. Defensive assignments and passing-lane safety cannot be inferred from nearest-defender distance alone.</p>
 <section class="hut-extra-metrics" aria-label="Huddles expanded dataset findings">
 <div class="hut-eyebrow">03 / HUDDLES' TAKEAWAY · LEAGUE-WIDE CASE FILE</div>
 <h3>THE NUMBERS BEHIND THE CLUE.</h3>
@@ -414,11 +414,11 @@ h2.big{
 <div class="hut-metric-item"><strong>34.5%</strong><span>TIGHT ENDS · 2,739 / 7,948</span></div>
 <div class="hut-metric-item"><strong>33.7%</strong><span>WIDE RECEIVERS · 6,828 / 20,253</span></div>
 </div>
-<p class="hut-description">RUNNING BACKS: 2,027 / 6,167 (32.9%). Across 122 games and all 32 teams, about one in three receiver-play observations met the expanded window-closure rule. These are receiver-play observations, not unique passes or failed plays. The full-dataset rule begins qualifying windows one second after the snap, so do not directly compare its rate with the original single-game result.</p>
+<p class="hut-description">RUNNING BACKS: 2,027 / 6,167 (32.9%). Across 122 games and all 32 teams, about one in three receiver-play observations met the expanded window-closure rule. These are receiver-play observations, not unique passes or failed plays. Qualifying windows are counted starting one second after the snap.</p>
 </section><div id="huddles-takeaway" class="huddles-verdict">
 <div class="verdict-tag">03 / HUDDLES' TAKEAWAY · CASE CLOSED?</div>
 <h2>THE WINDOW CLOSED.<br><em>THE PASS CONNECTED.</em></h2>
-<p>Blake Jarwin had <b>2.37 yards</b> of nearest-defender separation at release — yet the pass was <b>completed for 6 yards</b>. Across the expanded dataset, <b>11,594 of 34,368 receiver-play observations (33.7%)</b> met the updated window-closure definition. The originally featured Dallas–Tampa Bay game separately showed 156 of 430 (36.3%) under an earlier rule; those percentages are not directly comparable.</p>
+<p>Blake Jarwin had <b>2.37 yards</b> of nearest-defender separation at release — yet the pass was <b>completed for 6 yards</b>. Across the expanded dataset, <b>11,594 of 34,368 receiver-play observations (33.7%)</b> met the updated window-closure definition.</p>
 <p class="verdict-foot">THE CLUE: A closing separation window does not automatically mean a failed play. This is descriptive analysis of 122 games, not a prediction of pass safety or causation.</p>
 <a href="#film-room">↺ REWATCH THE EVIDENCE</a>
 </div></section>
@@ -430,7 +430,7 @@ const data={
 lab:['WELCOME TO WINDOW ALERT','THE OPPORTUNITY YOU DIDN’T SEE.','HUT & SEEK turns frame-by-frame NFL tracking into an understandable broadcast replay. Huddles investigates when a receiver creates space and when the nearest defender closes it.','Explore Case 001: Dallas vs Tampa Bay, September 9, 2021. This is a recorded-data replay, not a live broadcast.'],
 study:['01 · THE HUNCH','HOW LONG DOES THE WINDOW LAST?','A receiver can be separated from the nearest defender and still lose that space before the quarterback throws. We measure how long a 3-yard distance threshold is met.','The 3-yard threshold is an exploratory proxy for separation, not proof of an open passing lane.'],
 playbook:['02 · THE FILM ROOM','FOLLOW EVERY FRAME.','Python joins tracking coordinates, plays, player positions and PFF route labels. Nearest-defender separation is calculated at 10 frames per second, from snap to pass release.','Press PLAY in the Window Alert section to watch Blake Jarwin and his nearest defender. The Window Clock moves with the same recorded frames.'],
-findings:['03 · THE TAKEAWAY','THE WINDOW CLOSED. THE PASS CONNECTED.','In one 2021 game, 156 of 430 receiver-play observations (36.3%) met the window-closure definition. Blake Jarwin had 2.37 yards of separation at release on a completed pass.','These are descriptive findings from 91 eligible passing plays in one game. They do not establish defensive assignments or pass safety.'],
+findings:['03 · THE TAKEAWAY','THE WINDOW CLOSED. THE PASS CONNECTED.','Across 122 games and all 32 teams, 11,594 of 34,368 receiver-play observations (33.7%) met the window-closure definition. Blake Jarwin had 2.37 yards of separation at release on a completed pass.','These are descriptive findings from 7,519 eligible passing plays. They do not establish defensive assignments or pass safety.'],
 resources:['RESEARCH DESK','SHOW THE RECEIPTS.','The analysis uses the organizers’ 2021 NFL Big Data Bowl dataset: tracking, players, plays, games and PFF scouting CSVs.','The Python script, output images, calculated metrics and README belong in the public submission repository.'],
 casefile:['CASE FILE NO. 001','THE DISAPPEARING WINDOW.','Dallas Cowboys vs Tampa Bay Buccaneers · September 9, 2021 · Game 2021090900 · Play 1425 · Blake Jarwin (TE).','This pass was completed for 6 yards even though Jarwin’s nearest-defender separation was 2.37 yards at release.'],
 preview:['ABOUT THE DEMO','REAL DATA. PLAYFUL DETECTIVE.','The Huddles illustration and bright three-card layout are retained, with Window Alert exploring all 32 NFL teams and two real tracking replays in the Film Room.','The animated film-room visualization follows 57 recorded tracking frames at 10 Hz. It is not a video feed or a live 2026 game.']};
@@ -439,7 +439,7 @@ const overlay=document.getElementById('overlay'), dialog=overlay.querySelector('
 function show(key){const v=data[key];if(!v)return;lastFocus=document.activeElement;document.getElementById('modal-stamp').textContent=v[0];document.getElementById('modal-title').textContent=v[1];document.getElementById('modal-desc').textContent=v[2];document.getElementById('modal-details').innerHTML='<p style="background:#ffde74;border-left:5px solid #173b2a;padding:14px;font-size:13px;line-height:1.5"></p>';document.getElementById('modal-details').firstChild.textContent=v[3];overlay.classList.add('open');document.body.style.overflow='hidden';dialog.focus();}
 function hide(){overlay.classList.remove('open');document.body.style.overflow='';lastFocus?.focus();}
 document.querySelectorAll('[data-open]').forEach(el=>el.addEventListener('click',()=>show(el.getAttribute('data-open'))));document.getElementById('about-preview').addEventListener('click',()=>show('preview'));document.getElementById('close').addEventListener('click',hide);overlay.addEventListener('click',e=>{if(e.target===overlay)hide()});document.addEventListener('keydown',e=>{if(e.key==='Escape'&&overlay.classList.contains('open'))hide();});
-const tabs={question:['01 / A QUESTION WORTH TESTING','When did the window close?','How long did the receiver stay at least 3 yards from the nearest defender? We will refine the question once the official dataset is released.','STATUS: VERIFIED ONE-GAME SAMPLE · SEE WINDOW ALERT BELOW'],method:['02 / CHECK THE ASSUMPTIONS','Read the play before running it.','Identify the unit of observation, join keys, relevant positions, performance outcomes and leakage risks. Only then choose a baseline and test whether a new signal adds value.','STATUS: METHODOLOGY PREPARED · DATA PENDING'],finding:['03 / AN ACTIONABLE CONCLUSION','Evidence before excitement.','The final case will show the result, the comparison that supports it, uncertainty, and what a scouting team can responsibly infer. We do not claim a discovery until the data supports it.','STATUS: SEE VERIFIED WINDOW ALERT RESULTS BELOW']};
+const tabs={question:['01 / A QUESTION WORTH TESTING','When did the window close?','How long did the receiver stay at least 3 yards from the nearest defender? We measure it across all 122 games in the 2021 dataset.','STATUS: 122 GAMES · 34,368 OBSERVATIONS · SEE WINDOW ALERT BELOW'],method:['02 / CHECK THE ASSUMPTIONS','Read the play before running it.','Identify the unit of observation, join keys, relevant positions, performance outcomes and leakage risks. Only then choose a baseline and test whether a new signal adds value.','STATUS: METHODOLOGY PREPARED · DATA PENDING'],finding:['03 / AN ACTIONABLE CONCLUSION','Evidence before excitement.','The final case will show the result, the comparison that supports it, uncertainty, and what a scouting team can responsibly infer. We do not claim a discovery until the data supports it.','STATUS: SEE VERIFIED WINDOW ALERT RESULTS BELOW']};
 document.querySelectorAll('[data-tab]').forEach(b=>b.addEventListener('click',()=>{const d=tabs[b.dataset.tab];document.querySelectorAll('[data-tab]').forEach(t=>t.setAttribute('aria-selected',String(t===b)));document.getElementById('tab-content').innerHTML='<div class="mono" style="font-size:12px"></div><h3 class="tab-heading"></h3><p class="tab-text"></p><p class="mono" style="font-size:12px"></p>';const children=document.getElementById('tab-content').children;for(let i=0;i<4;i++)children[i].textContent=d[i];}));
 })();
 </script>
@@ -774,6 +774,11 @@ games();players();selection();const original=rows.find(r=>r[0]==='2021090900'&&r
   }
  }
  const league=count(rows);
+ const teamRates=[...teamStats].map(([k,v])=>[k,v.closed/v.n]);
+ const rateVals=teamRates.map(x=>x[1]);
+ const rMin=Math.min(...rateVals),rMax=Math.max(...rateVals);
+ const ordinal=n=>n+(['th','st','nd','rd'][(n%100>10&&n%100<14)?0:(n%10<4?n%10:0)]||'th');
+ const teamRank=team=>{const r=teamStats.get(team);const v=r.closed/r.n;return 1+rateVals.filter(x=>x>v).length;};
  const root=document.createElement('section');root.id='hut-dynamic-takeaway';root.setAttribute('aria-label','Huddles takeaway for selected case');
  root.innerHTML=`
  <div class="ht-kicker">03 / HUDDLES' TAKEAWAY · LIVE CASE DEBRIEF</div>
@@ -815,7 +820,7 @@ games();players();selection();const original=rows.find(r=>r[0]==='2021090900'&&r
   }
   const ts=teamStats.get(team),ps=posStats.get(position);
   $('ht-team-rate').textContent=pct(ts.closed,ts.n);
-  $('ht-team-label').textContent=`${team} OFFENSE · ${ts.closed.toLocaleString()} / ${ts.n.toLocaleString()} OBSERVATIONS`;
+  $('ht-team-label').textContent=`${team} OFFENSE · ${ts.closed.toLocaleString()} / ${ts.n.toLocaleString()} · ${ordinal(teamRank(team)).toUpperCase()}-HIGHEST OF ${teamStats.size} TEAMS (RANGE ${(100*rMin).toFixed(1)}–${(100*rMax).toFixed(1)}%)`;
   $('ht-position-rate').textContent=pct(ps.closed,ps.n);
   $('ht-position-label').textContent=`${(posLabels[position]||position).toUpperCase()} · ${ps.closed.toLocaleString()} / ${ps.n.toLocaleString()}`;
   $('ht-league-rate').textContent=pct(league.closed,league.n);
@@ -825,6 +830,20 @@ games();players();selection();const original=rows.find(r=>r[0]==='2021090900'&&r
  render(window.HUT_CURRENT_CASE||rows.find(r=>r[0]==='2021090900'&&r[1]===1425&&r[2]==='Blake Jarwin'));
  $('ht-watch').addEventListener('click',()=>{document.querySelector('[data-hut="film"]')?.click();document.getElementById('hf-detail')?.scrollIntoView({behavior:'smooth',block:'start'});});
  $('ht-explore').addEventListener('click',()=>{document.querySelector('[data-hut="film"]')?.click();document.getElementById('hut-film-library')?.scrollIntoView({behavior:'smooth',block:'start'});});
+})();
+</script>
+<script>
+/* Menu, case cards and in-page links switch to the matching Window Clock tab, then scroll to it. */
+(()=>{
+ const go=(tab,target)=>{const t=document.querySelector('[data-hut="'+tab+'"]');if(t)t.click();
+  const el=(target&&document.getElementById(target))||document.getElementById('window-live');
+  if(el)setTimeout(()=>el.scrollIntoView({behavior:'smooth',block:'start'}),60);};
+ document.querySelectorAll('[data-goto]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.goto)));
+ document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{
+  const id=a.getAttribute('href').slice(1);const el=id&&document.getElementById(id);if(!el)return;
+  const panel=el.closest('[role="tabpanel"]');if(!panel||!panel.hidden&&panel.offsetParent)return;
+  const tab=document.querySelector('[aria-controls="'+panel.id+'"]');if(!tab)return;
+  e.preventDefault();tab.click();setTimeout(()=>el.scrollIntoView({behavior:'smooth',block:'start'}),60);}));
 })();
 </script>
 </body></html>

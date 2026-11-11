@@ -690,7 +690,7 @@ function attachSchematic(parent,r){
  if(!valid)el('hfs-play').disabled=true;
  stopCurrentSchematic=pause;draw(0);
 }
-function pick(r){selected=rKey(r);const d=$('hf-detail');d.replaceChildren();add(d,'div','hf-kicker',`CASE FILE · WEEK ${r[11]} · GAME ${r[0]} · PLAY ${r[1]}`);add(d,'h4','',r[2].toUpperCase()+' · '+r[4]+' VS '+r[5]);
+function pick(r){selected=rKey(r);window.HUT_CURRENT_CASE=r;window.dispatchEvent(new CustomEvent('hut:case-selected',{detail:r}));const d=$('hf-detail');d.replaceChildren();add(d,'div','hf-kicker',`CASE FILE · WEEK ${r[11]} · GAME ${r[0]} · PLAY ${r[1]}`);add(d,'h4','',r[2].toUpperCase()+' · '+r[4]+' VS '+r[5]);
 add(d,'p','',`POSITION ${r[3]} · WHOLE-PLAY PASS RESULT: ${passes[r[10]]||r[10]} · ${r[9]?'WINDOW CLOSED BEFORE RELEASE':'NO QUALIFYING CLOSURE BEFORE RELEASE'}`);
 const grid=add(d,'div','hf-metricbar-grid','');for(const [v,l] of [[fmt(r[7])+' yd','PEAK SEPARATION'],[fmt(r[6])+' yd','AT RELEASE'],[fmt(r[8])+' s','LONGEST OPEN WINDOW'],[fmt(r[12])+' s','TOTAL QUALIFYING OPEN TIME']]){const box=add(grid,'div','hf-pill','');add(box,'strong','',v);add(box,'span','',l);}
 if(r[13]!==null)add(d,'p','',`LAST WINDOW CLOSED ${fmt(r[13])} SECONDS BEFORE RELEASE · ${r[14]} OBSERVED FRAMES AT 10 HZ.`);
@@ -700,6 +700,9 @@ attachSchematic(d,r);
 const featured=(r[0]==='2021090900'&&r[1]===1425&&r[2]==='Blake Jarwin')?'jarwin':(r[0]==='2021091206'&&r[1]===2111&&r[2]==='Parris Campbell')?'campbell':null;
 if(featured){const b=add(d,'button','','▶ WATCH THIS ACTUAL TRACKING REPLAY');b.addEventListener('click',()=>{window.HUT_SET_REPLAY?.(featured);document.getElementById('film-room')?.scrollIntoView({behavior:'smooth',block:'center'});});}
 else add(d,'p','hf-warning','The simulator above uses the observed peak and release separation values as its endpoints. Intermediate distances, positions, and progress are illustrative, NOT measured tracking data. To generate a true NFL play replay for this case, we would need its original frame-by-frame receiver and defender coordinates.');
+const takeawayButton=add(d,'button','hf-visit-takeaway','🔎 READ HUDDLES’ TAKEAWAY FOR THIS CASE');
+takeawayButton.type='button';
+takeawayButton.addEventListener('click',()=>{document.querySelector('[data-hut="takeaway"]')?.click();document.getElementById('hut-dynamic-takeaway')?.scrollIntoView({behavior:'smooth',block:'start'});});
 const matchIndex=filtered.findIndex(x=>rKey(x)===selected);if(matchIndex!==-1){
  const nav=add(d,'div','hf-case-nav','');const prev=add(nav,'button','','← PREVIOUS CASE');prev.type='button';prev.disabled=matchIndex===0;const index=add(nav,'span','',`CASE ${matchIndex+1} OF ${filtered.length.toLocaleString('en-US')}`);const next=add(nav,'button','','NEXT CASE →');next.type='button';next.disabled=matchIndex>=filtered.length-1;
  const nextCase=i=>{page=Math.floor(i/Number($('hf-page-size').value));pick(filtered[i]);d.scrollIntoView({behavior:'smooth',block:'start'});};
@@ -721,4 +724,107 @@ $('hf-filter-closed').addEventListener('click',()=>{showAll();status.value='clos
 $('hf-open-library').addEventListener('click',()=>{showAll();wrapper.scrollIntoView({behavior:'smooth',block:'start'});});
 games();players();selection();const original=rows.find(r=>r[0]==='2021090900'&&r[1]===1425&&r[2]==='Blake Jarwin');if(original)pick(original);
 })();
-</script></body></html>
+</script>
+<style>
+/* Huddles' Takeaway · dynamic receiver-play case debrief */
+#hut-dynamic-takeaway{background:#f7e7c6;color:#153c2d;border:3px solid #f9c93b;border-radius:17px;padding:clamp(18px,3vw,34px);margin:24px 0 28px;box-shadow:7px 7px 0 #e16a2a;scroll-margin-top:28px}
+#hut-dynamic-takeaway .ht-kicker{font:900 12px/1.4 'Courier New',monospace;letter-spacing:.1em;color:#96491b;margin-bottom:12px}
+#hut-dynamic-takeaway .ht-heading{display:flex;gap:16px;justify-content:space-between;align-items:flex-start;flex-wrap:wrap}
+#hut-dynamic-takeaway h3{font:1000 clamp(27px,4vw,51px)/.98 Impact,'Arial Black',sans-serif!important;margin:0;color:#173e2e;letter-spacing:-.025em}
+#hut-dynamic-takeaway .ht-meta{font:700 12px/1.6 'Courier New',monospace;margin:9px 0 0}
+#hut-dynamic-takeaway .ht-stamp{font:900 12px/1.3 'Courier New',monospace;border:2px solid #173e2e;background:#ffce32;padding:11px 12px;border-radius:7px;text-align:center;max-width:200px;transform:rotate(1deg)}
+#hut-dynamic-takeaway .ht-stamp[data-closed="false"]{background:#d28bd0}
+#hut-dynamic-takeaway .ht-metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:20px}
+#hut-dynamic-takeaway .ht-metric{background:#fff9e9;border:2px solid #173e2e;border-radius:9px;padding:12px;min-width:0}
+#hut-dynamic-takeaway .ht-metric b{display:block;font:900 clamp(23px,2.9vw,38px)/1 Impact,'Arial Black',sans-serif;margin-bottom:8px}
+#hut-dynamic-takeaway .ht-metric span{display:block;font:800 10px/1.4 'Courier New',monospace}
+#hut-dynamic-takeaway .ht-insight{background:#163d2f;color:#f9eaca;border-radius:10px;padding:21px;margin-top:19px}
+#hut-dynamic-takeaway .ht-insight strong{display:block;color:#ffce39;font:900 clamp(20px,2.5vw,29px)/1.15 Impact,'Arial Black',sans-serif;letter-spacing:0;margin-bottom:8px}
+#hut-dynamic-takeaway .ht-insight p{font:700 13px/1.7 'Courier New',monospace;margin:0;color:#f9eaca}
+#hut-dynamic-takeaway .ht-comparison{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:11px;margin-top:20px}
+#hut-dynamic-takeaway .ht-rate{background:#fceabb;border-radius:9px;border:2px solid #ba8740;padding:15px}
+#hut-dynamic-takeaway .ht-rate b{display:block;font:900 clamp(25px,3vw,40px)/1 Impact,'Arial Black',sans-serif}
+#hut-dynamic-takeaway .ht-rate span{font:800 11px/1.4 'Courier New',monospace;display:block;margin-top:7px}
+#hut-dynamic-takeaway .ht-caption{font:700 11px/1.7 'Courier New',monospace;margin:15px 0;color:#4b5c4e}
+#hut-dynamic-takeaway .ht-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:19px}
+#hut-dynamic-takeaway .ht-actions button{font:900 12px/1.4 'Courier New',monospace!important;padding:13px 18px!important;border:2px solid #0f3729!important;border-radius:8px!important;background:#ffcf34!important;color:#143a2b!important;cursor:pointer}
+#hut-dynamic-takeaway .ht-actions button:last-child{background:#fff7e1!important}
+#hut-takeaway .hf-visit-takeaway,#hut-film-library .hf-visit-takeaway{background:#ffcc37;color:#163c2d;border:2px solid #173d2d;border-radius:8px;padding:13px 18px;font:900 12px 'Courier New',monospace;cursor:pointer;margin:18px 0 10px}
+#hut-takeaway #huddles-takeaway{margin-top:26px}
+#hut-takeaway #huddles-takeaway::before{content:'ORIGINAL FEATURED CASE · BLAKE JARWIN · DAL VS TB';display:block;font:900 11px/1.5 'Courier New',monospace;color:#a0461d;letter-spacing:.07em;margin-bottom:17px}
+@media(max-width:780px){#hut-dynamic-takeaway .ht-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}#hut-dynamic-takeaway .ht-comparison{grid-template-columns:1fr}}
+@media(max-width:400px){#hut-dynamic-takeaway .ht-metrics{grid-template-columns:1fr}}
+</style>
+
+<script>
+/* Selected receiver-play observation -> Huddles' Takeaway, without inventing tracking frames */
+(()=>{
+ const rows=window.HUT_ROWS;
+ const host=document.getElementById('hut-takeaway');
+ if(!rows||!host)return;
+ const format=number=>Number.isFinite(number)?number.toFixed(2)+' yd':'—';
+ const sec=number=>Number.isFinite(number)?number.toFixed(2)+' s':'—';
+ const pct=(num,den)=>den>0?(100*num/den).toFixed(1)+'%':'—';
+ const count=(rs)=>({n:rs.length,closed:rs.reduce((sum,r)=>sum+(r[9]?1:0),0)});
+ const teamStats=new Map(),posStats=new Map();
+ for(const r of rows){
+  for(const [map,key] of [[teamStats,r[4]],[posStats,r[3]]]){
+   if(!map.has(key))map.set(key,{n:0,closed:0});
+   const s=map.get(key);s.n++;s.closed+=r[9]?1:0;
+  }
+ }
+ const league=count(rows);
+ const root=document.createElement('section');root.id='hut-dynamic-takeaway';root.setAttribute('aria-label','Huddles takeaway for selected case');
+ root.innerHTML=`
+ <div class="ht-kicker">03 / HUDDLES' TAKEAWAY · LIVE CASE DEBRIEF</div>
+ <div class="ht-heading"><div><h3 id="ht-player">CHOOSE A RECEIVER CASE</h3><p class="ht-meta" id="ht-meta">SELECT A CASE IN THE FILM ROOM</p></div><div class="ht-stamp" id="ht-status">—</div></div>
+ <div class="ht-metrics">
+ <div class="ht-metric"><b id="ht-peak">—</b><span>PEAK NEAREST-DEFENDER GAP</span></div>
+ <div class="ht-metric"><b id="ht-release">—</b><span>GAP AT PASS RELEASE</span></div>
+ <div class="ht-metric"><b id="ht-longest">—</b><span>LONGEST QUALIFYING WINDOW</span></div>
+ <div class="ht-metric"><b id="ht-closed-at">—</b><span>TIME SINCE LAST QUALIFYING CLOSURE</span></div>
+ </div>
+ <div class="ht-insight"><strong id="ht-headline">HUDDLES' SCOUTING NOTE</strong><p id="ht-narrative">Choose a case in The Film Room to see its findings.</p></div>
+ <div class="ht-comparison"><div class="ht-rate"><b id="ht-team-rate">—</b><span id="ht-team-label">TEAM CLOSURE RATE</span></div><div class="ht-rate"><b id="ht-position-rate">—</b><span id="ht-position-label">POSITION CLOSURE RATE</span></div><div class="ht-rate"><b id="ht-league-rate">33.7%</b><span>ALL 32 TEAMS · 34,368 OBSERVATIONS</span></div></div>
+ <p class="ht-caption" id="ht-caution">Rates describe receiver-play observations under the exploratory 3-yard rule, starting one second after the snap. They are not success probabilities. A pass result applies to the entire play, not necessarily the selected receiver.</p>
+ <div class="ht-actions"><button type="button" id="ht-watch">↺ RETURN TO THIS FILM ROOM CASE</button><button type="button" id="ht-explore">EXPLORE ALL 34,368 CASES</button></div>
+ `;
+ host.insertBefore(root,host.firstChild);
+ const $=id=>root.querySelector('#'+id);
+ const states={C:'COMPLETED',I:'INCOMPLETE',IN:'INTERCEPTED'};
+ const posLabels={WR:'wide receivers',TE:'tight ends',RB:'running backs'};
+ function render(r){
+  if(!r)return;
+  const [game,play,name,position,team,opponent,release,peak,longest,closed,result,week,total,lastClosed]=r;
+  $('ht-player').textContent=name.toUpperCase();
+  $('ht-meta').textContent=`WEEK ${week} · ${team} VS ${opponent} · GAME ${game} · PLAY ${play} · ${position}`;
+  $('ht-status').textContent=closed?'QUALIFYING WINDOW CLOSED BEFORE RELEASE':'NO QUALIFYING CLOSURE RECORDED';
+  $('ht-status').dataset.closed=String(Boolean(closed));
+  $('ht-peak').textContent=format(peak);$('ht-release').textContent=format(release);
+  $('ht-longest').textContent=sec(longest);$('ht-closed-at').textContent=sec(lastClosed);
+  const outcome=states[result]||'RECORDED';
+  if(closed){
+   $('ht-headline').textContent='THE WINDOW CLOSED. WHAT HAPPENED NEXT?';
+   const timing=Number.isFinite(lastClosed)?` The most recent qualifying window ended ${lastClosed.toFixed(2)} seconds before release.`:'';
+   const reopen=Number.isFinite(release)&&release>=3?' The receiver was at least 3 yards from the nearest defender again at release, so this does not mean the gap stayed closed.':'';
+   $('ht-narrative').textContent=`Huddles detected at least one qualifying separation window that closed before the throw.${timing} At release, the nearest-defender gap measured ${format(release)}.${reopen} The play was marked ${outcome.toLowerCase()}; that is a play-level result, not proof this receiver caught or was targeted by the pass.`;
+  }else{
+   $('ht-headline').textContent='NO QUALIFYING CLOSURE — ANOTHER CLUE.';
+   const neverReached=Number.isFinite(peak)&&peak<3?' This observation never reached the 3-yard threshold according to its recorded peak gap.':'';
+   $('ht-narrative').textContent=`This observation was not flagged for a qualifying window closing before release.${neverReached} The measured release gap was ${format(release)} and the longest qualifying open window was ${sec(longest)}. The play was marked ${outcome.toLowerCase()}, but the outcome alone cannot explain this receiver's route or the quarterback's decision.`;
+  }
+  const ts=teamStats.get(team),ps=posStats.get(position);
+  $('ht-team-rate').textContent=pct(ts.closed,ts.n);
+  $('ht-team-label').textContent=`${team} OFFENSE · ${ts.closed.toLocaleString()} / ${ts.n.toLocaleString()} OBSERVATIONS`;
+  $('ht-position-rate').textContent=pct(ps.closed,ps.n);
+  $('ht-position-label').textContent=`${(posLabels[position]||position).toUpperCase()} · ${ps.closed.toLocaleString()} / ${ps.n.toLocaleString()}`;
+  $('ht-league-rate').textContent=pct(league.closed,league.n);
+ }
+ window.HUT_SHOW_TAKEAWAY=render;
+ window.addEventListener('hut:case-selected',e=>render(e.detail));
+ render(window.HUT_CURRENT_CASE||rows.find(r=>r[0]==='2021090900'&&r[1]===1425&&r[2]==='Blake Jarwin'));
+ $('ht-watch').addEventListener('click',()=>{document.querySelector('[data-hut="film"]')?.click();document.getElementById('hf-detail')?.scrollIntoView({behavior:'smooth',block:'start'});});
+ $('ht-explore').addEventListener('click',()=>{document.querySelector('[data-hut="film"]')?.click();document.getElementById('hut-film-library')?.scrollIntoView({behavior:'smooth',block:'start'});});
+})();
+</script>
+</body></html>

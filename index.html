@@ -284,6 +284,40 @@ h2.big{
 #hut-film .hf-feature-wrapper .hf-feature strong{font:1000 clamp(17px,2vw,23px)/1.1 Impact,'Arial Black',sans-serif}
 #hut-film .hf-feature-wrapper .hf-feature small{font:700 12px/1.4 'Courier New',monospace;white-space:normal}
 @media(max-width:650px){.hf-feature-wrapper .hf-features{grid-template-columns:1fr}}
+</style><style>
+#hut-film-library{scroll-margin-top:18px}
+#hut-film-library .hf-actions,.hf-top-actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:14px 0}
+#hut-film-library .hf-actions>span{font:800 11px/1.5 'Courier New',monospace}
+#hut-film .hf-top-actions>button{padding:14px 18px;border:2px solid #ffce35;border-radius:7px;background:#ffce35;color:#103828;font:900 15px 'Courier New',monospace;cursor:pointer}
+#hut-film .hf-top-actions>span{color:#ffeabe;font:700 12px/1.5 'Courier New',monospace}
+#hut-film-library .hf-pager-controls{display:flex;align-items:end;gap:8px;flex-wrap:wrap}
+#hut-film-library .hf-pager-controls label{font-size:10px;width:auto;min-width:65px}
+#hut-film-library .hf-pager-controls select,#hut-film-library .hf-pager-controls input{width:80px;padding:8px 6px;font-size:12px}
+#hut-film-library .hf-pager-controls input{width:65px}
+#hut-film-library .hf-pager-controls button:disabled,#hut-film-library .hf-case-nav button:disabled{opacity:.4;cursor:not-allowed}
+#hut-film-library .hf-case-nav{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;margin:20px 0 4px;padding-top:16px;border-top:1px dashed #b4c1aa}
+#hut-film-library .hf-case-nav span{font:900 11px/1.6 'Courier New',monospace;color:#f7dfad}
+#hut-film-library .hf-detail{scroll-margin-top:20px}
+@media(max-width:700px){#hut-film-library .hf-pager{align-items:start}#hut-film-library .hf-pager-controls{width:100%;justify-content:space-between}#hut-film .hf-top-actions>button{width:100%}}
+</style><style>
+#hut-film-library .hf-simulator{border:2px solid #eac94e;border-radius:13px;padding:clamp(15px,2.5vw,24px);margin:22px 0;background:#12392d;box-shadow:inset 0 0 0 2px rgba(0,0,0,.14)}
+#hut-film-library .hf-simulator .hfs-kicker{font:900 12px/1.5 'Courier New',monospace;color:#ffdc8a;display:flex;align-items:center;flex-wrap:wrap;gap:8px}
+#hut-film-library .hf-simulator .hfs-badge{font:900 10px/1.3 'Courier New',monospace;color:#142f23;background:#ffcf48;padding:6px 8px;border-radius:5px;letter-spacing:.04em}
+#hut-film-library .hf-simulator h5{font:1000 clamp(26px,4vw,42px)/1 Impact,'Arial Black',sans-serif;color:#ffce3e;margin:14px 0 8px}
+#hut-film-library .hf-simulator .hfs-explain,#hut-film-library .hf-simulator .hfs-disclaimer{font:700 12px/1.65 'Courier New',monospace;color:#fff0d6;margin:8px 0 17px}
+#hut-film-library .hf-simulator .hfs-field{display:block;width:100%;height:auto;max-height:370px;border:2px solid #9fc8a7;border-radius:12px}
+#hut-film-library .hf-simulator .hfs-meta{display:flex;align-items:center;flex-wrap:wrap;justify-content:space-between;gap:8px;margin:11px 0;font:800 12px 'Courier New',monospace;color:#ffe2a3}
+#hut-film-library .hf-simulator .hfs-meta span{font-size:11px;color:#f2a38c}
+#hut-film-library .hf-simulator .hfs-controls{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:14px 0}
+#hut-film-library .hf-simulator .hfs-controls>button{border-color:#ffcd3c;background:#ffd23f;padding:9px 11px}
+#hut-film-library .hf-simulator .hfs-controls>button:disabled{opacity:.5}
+#hut-film-library .hf-simulator .hfs-controls label{flex:1;min-width:200px;color:#ffe5a4;font:700 11px/1.5 'Courier New',monospace}
+#hut-film-library .hf-simulator .hfs-controls input{background:transparent;padding:0;margin-top:4px;width:100%;accent-color:#ffc835;border:0}
+#hut-film-library .hf-simulator .hfs-facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px}
+#hut-film-library .hf-simulator .hfs-facts>span{font:700 10px/1.5 'Courier New',monospace;background:#f7e8c8;color:#163a2e;padding:12px 10px;border-radius:6px}
+#hut-film-library .hf-simulator .hfs-facts b{font:1000 20px Impact,'Arial Black',sans-serif;color:#153e2c;display:block}
+#hut-film-library .hf-simulator .hfs-disclaimer{margin:16px 0 0;color:#e1ebd7;border-top:1px dashed #8eb69a;padding-top:13px}
+@media(max-width:720px){#hut-film-library .hf-simulator .hfs-facts{grid-template-columns:repeat(2,minmax(0,1fr))}#hut-film-library .hf-simulator .hfs-controls>button{flex:1}}
 </style></head>
 <body>
 <div class="preview-toolbar"><span>HUT & SEEK · WINDOW ALERT · 2021 NFL TRACKING</span><span class="author-topline">CREATED BY TIFFANY HURTADO · NYU TANDON</span><button type="button" id="about-preview">ABOUT THIS DEMO ⓘ</button></div>
@@ -515,7 +549,7 @@ root.innerHTML=`<div class="hx-eyebrow">CASE FILES / 2021 NFL / WEEKS 1–8</div
 <div class="hx-stats"><div class="hx-stat"><strong id="hx-rate">—</strong><span>WINDOW CLOSURE RATE</span></div><div class="hx-stat"><strong id="hx-count">—</strong><span>RECEIVER-PLAY OBSERVATIONS</span></div><div class="hx-stat"><strong id="hx-med">—</strong><span>MEDIAN SEPARATION AT RELEASE</span></div></div>
 <div class="hx-table-wrap"><table class="hx-table"><thead><tr><th>WEEK</th><th>PLAY</th><th>RECEIVER</th><th>VS</th><th>AT RELEASE</th><th>WINDOW CLOSED?</th><th>PASS RESULT</th></tr></thead><tbody id="hx-body"></tbody></table></div>
 <p class="hx-note" id="hx-footer"></p>
-<p class="hx-note"><span class="hx-highlight">REPLAY NOTE</span> The Film Room has real frame-by-frame replays of Blake Jarwin (#1425) and Parris Campbell (#2111). All other observations have verified metric-only case files; no animations are invented. Window closure is defined using the supplied Python analysis and an experimental 3-yard separation threshold; this dataset-wide run applies a one-second post-snap qualifying window.</p>`;
+<p class="hx-note"><span class="hx-highlight">REPLAY NOTE</span> The Film Room has real frame-by-frame replays of Blake Jarwin (#1425) and Parris Campbell (#2111). Every other observation has a clearly labeled illustrative, metric-driven separation simulator (not a true tracking replay). Window closure is defined using the supplied Python analysis and an experimental 3-yard separation threshold; this dataset-wide run applies a one-second post-snap qualifying window.</p>`;
 host.appendChild(root);
 const $=id=>document.getElementById(id);
 const team=$('hx-team'),game=$('hx-game'),player=$('hx-player');
@@ -554,20 +588,23 @@ const extra=document.querySelector('.hut-extra-metrics[aria-label="Film Room pla
 const tm=document.querySelector('.hut-extra-metrics[aria-label="Huddles expanded dataset findings"]');if(tm)takeaway.insertBefore(tm,takeaway.firstChild);
 const explain=document.querySelector('.wl-explain');if(explain)takeaway.appendChild(explain);
 const source=document.querySelector('.wl-source');if(source)film.appendChild(source);
-const pre=document.createElement('div');pre.className='hf-feature-wrapper';pre.innerHTML=`<p class="hut-explain" style="margin-top:22px">CHOOSE A FEATURED REAL-DATA REPLAY. THE FIELD AND CLOCK BELOW WILL UPDATE TO MATCH.</p><div id="hf-feature-choices" class="hf-features">
+const pre=document.createElement('div');pre.className='hf-feature-wrapper';pre.innerHTML=`<p class="hut-explain" style="margin-top:22px">TWO AUTHENTIC FRAME-BY-FRAME REPLAYS + AN INTERACTIVE, CLEARLY LABELED METRIC SIMULATION FOR ALL 34,368 RECEIVER-PLAY OBSERVATIONS.</p>
+<div class="hf-top-actions"><button type="button" id="hf-open-library">▶ EXPLORE & SIMULATE ALL 34,368 CASES ↓</button><span>ALL 32 TEAMS · 122 GAMES · 7,519 PASSING PLAYS</span></div>
+<p class="hut-explain">WATCH A REAL-DATA REPLAY:</p><div id="hf-feature-choices" class="hf-features">
 <button class="hf-feature" data-replay="jarwin" aria-pressed="true" type="button"><strong>🎬 BLAKE JARWIN · DAL vs TB</strong><small>Play #1425 · 57 recorded frames · Completed for 6 yards</small><small>Peak: 5.37 yd · Release: 2.37 yd</small></button>
 <button class="hf-feature" data-replay="campbell" aria-pressed="false" type="button"><strong>🎬 PARRIS CAMPBELL · IND vs SEA</strong><small>Play #2111 · 76 recorded frames · Incomplete</small><small>Peak: 6.80 yd · Release: 2.87 yd · 6.3 s longest window</small></button></div>`;
 const play=film.querySelector('.wl-play');if(play)film.insertBefore(pre,play);else film.prepend(pre);
 for(const b of pre.querySelectorAll('[data-replay]'))b.addEventListener('click',()=>{window.HUT_SET_REPLAY?.(b.dataset.replay);film.querySelector('.wl-grid')?.scrollIntoView({behavior:'smooth',block:'center'});});
 const wrapper=document.createElement('section');wrapper.id='hut-film-library';wrapper.innerHTML=`
-<div class="hf-kicker">THE COMPLETE CASE LIBRARY / 2021 NFL / WEEKS 1–8</div>
-<h3>EXPLORE EVERY PLAY.</h3>
-<p class="hf-note">32 TEAMS · 122 GAMES · 7,519 PASSING PLAYS · 34,368 RECEIVER-PLAY OBSERVATIONS.<br>Every observation has calculated metrics. Only the two cases above include the underlying frame-by-frame coordinates needed for a real animation.</p>
+<div class="hf-kicker">THE COMPLETE SIMULATABLE CASE LIBRARY / 2021 NFL / WEEKS 1–8</div>
+<h3>SIMULATE ALL 34,368 CASES.</h3>
+<p class="hf-note">32 TEAMS · 122 GAMES · 7,519 PASSING PLAYS · 34,368 RECEIVER-PLAY OBSERVATIONS.<br>Every receiver-play observation now has a playable separation-gap schematic built from its actual summary metrics. This is an illustrative interpolation, NOT an actual tracking replay. Only the two featured cases have authentic frame-by-frame movements. The 34,368 observations are not 34,368 unique passing plays.</p>
+<div class="hf-actions"><button type="button" id="hf-reset-all">✓ SHOW ALL 34,368 CASE FILES</button><button type="button" id="hf-filter-closed">SHOW CLOSED-WINDOW CASES</button><span id="hf-filter-context" aria-live="polite">DISPLAYING ALL NFL TEAMS, GAMES AND RECEIVERS</span></div>
 <div class="hf-filters">
-<label>OFFENSIVE TEAM<select id="hf-team"></select></label><label>GAME<select id="hf-game"></select></label><label>RECEIVER<select id="hf-player"></select></label><label>WINDOW STATUS<select id="hf-status"><option value="all">ALL OBSERVATIONS</option><option value="closed" selected>CLOSED BEFORE RELEASE</option><option value="other">NOT CLOSED BEFORE RELEASE</option></select></label>
+<label>OFFENSIVE TEAM<select id="hf-team"></select></label><label>GAME<select id="hf-game"></select></label><label>RECEIVER<select id="hf-player"></select></label><label>WINDOW STATUS<select id="hf-status"><option value="all">ALL OBSERVATIONS</option><option value="closed">CLOSED BEFORE RELEASE</option><option value="other">NOT CLOSED BEFORE RELEASE</option></select></label>
 </div>
 <div class="hf-searchline"><label>SEARCH PLAYER, TEAM, OPPONENT, GAME ID OR PLAY #<input id="hf-query" placeholder="e.g. Parris Campbell or 1425" inputmode="search"></label><label>SORT<select id="hf-sort"><option value="longest">LONGEST OPEN WINDOW</option><option value="release">SMALLEST RELEASE GAP</option><option value="peak">LARGEST PEAK GAP</option><option value="recent">GAME / PLAY ORDER</option></select></label></div>
-<div class="hf-pager"><span id="hf-count" class="hf-note" role="status"></span><div><button type="button" id="hf-prev">← PREV</button> <button type="button" id="hf-next">NEXT →</button></div></div>
+<div class="hf-pager"><span id="hf-count" class="hf-note" role="status"></span><div class="hf-pager-controls"><label>CASES / PAGE<select id="hf-page-size" aria-label="Cases per page"><option value="45">45</option><option value="100" selected>100</option><option value="250">250</option></select></label><button type="button" id="hf-prev">← PREV</button><button type="button" id="hf-next">NEXT →</button><label>PAGE<input id="hf-jump" type="number" min="1" value="1" aria-label="Page number"></label><button type="button" id="hf-jump-btn">GO</button></div></div>
 <div class="hf-tablewrap"><table><thead><tr><th>WEEK</th><th>OFFENSE</th><th>PLAY</th><th>RECEIVER</th><th>POS.</th><th>PEAK</th><th>AT RELEASE</th><th>LONGEST WINDOW</th><th>CLOSED?</th><th>PASS</th></tr></thead><tbody id="hf-results"></tbody></table></div>
 <div id="hf-detail" class="hf-detail" aria-live="polite"><div class="hf-kicker">SELECT AN OBSERVATION TO INSPECT ITS CASE FILE.</div></div>
 <p class="hf-note">Important: The pass outcome belongs to the <em>entire play</em>; a listed receiver might not have been the target. "Window closed" uses a 3-yard nearest-defender threshold measured from 1 second after snap. These metrics do not establish passing-lane safety, quarterback reads, or play causality.</p>`;
@@ -585,22 +622,89 @@ function players(){const all=[...new Set(rows.filter(r=>(!team.value||r[4]===tea
 function selection(){const t=team.value,g=game.value,p=player.value,q=query.value.trim().toLowerCase(),z=status.value;
 filtered=rows.filter(r=>(!t||r[4]===t)&&(!g||r[0]===g)&&(!p||r[2]===p)&&(z==='all'||(z==='closed'?!!r[9]:!r[9]))&&(!q||[r[2],r[4],r[5],r[0],String(r[1])].some(x=>String(x).toLowerCase().includes(q))));
 const by={longest:(a,b)=>(b[8]??-1)-(a[8]??-1),release:(a,b)=>(a[6]??Infinity)-(b[6]??Infinity),peak:(a,b)=>(b[7]??-1)-(a[7]??-1),recent:(a,b)=>a[0].localeCompare(b[0])||a[1]-b[1]};filtered.sort(by[sort.value]||by.longest);page=0;renderList();}
-function renderList(){const per=45,total=filtered.length,max=Math.max(0,Math.ceil(total/per)-1);page=Math.max(0,Math.min(page,max));const slice=filtered.slice(page*per,(page+1)*per);
-$('hf-count').textContent=`SHOWING ${total? page*per+1:0}–${Math.min(total,(page+1)*per)} OF ${total.toLocaleString('en-US')} MATCHING OBSERVATIONS · PAGE ${page+1}/${max+1}`;
+function renderList(){const per=Number($('hf-page-size').value),total=filtered.length,max=Math.max(0,Math.ceil(total/per)-1);page=Math.max(0,Math.min(page,max));const slice=filtered.slice(page*per,(page+1)*per);
+$('hf-jump').max=max+1;$('hf-jump').value=page+1;$('hf-filter-context').textContent=(total===rows.length?'ALL '+rows.length.toLocaleString('en-US')+' OBSERVATIONS AVAILABLE':total.toLocaleString('en-US')+' MATCHING OBSERVATIONS');
+$('hf-count').textContent=`CASE FILES ${total? page*per+1:0}–${Math.min(total,(page+1)*per)} OF ${total.toLocaleString('en-US')} · PAGE ${page+1}/${max+1}`;
 $('hf-prev').disabled=page===0;$('hf-next').disabled=page>=max;
 const body=document.createDocumentFragment();for(const r of slice){const tr=document.createElement('tr');tr.tabIndex=0;tr.setAttribute('role','button');tr.setAttribute('aria-label',`Inspect ${r[2]} play ${r[1]} metrics`);tr.setAttribute('aria-selected',String(selected===rKey(r)));
 for(const v of [r[11],r[4]+' vs '+r[5],r[1],r[2],r[3],fmt(r[7])+' yd',fmt(r[6])+' yd',fmt(r[8])+' s',r[9]?'YES':'NO',passes[r[10]]||r[10]]){const td=document.createElement('td');td.textContent=v;tr.appendChild(td);}
-tr.addEventListener('click',()=>pick(r));tr.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();pick(r);}});body.appendChild(tr)}$('hf-results').replaceChildren(body);}
+tr.addEventListener('click',()=>{pick(r);$('hf-detail').scrollIntoView({behavior:'smooth',block:'start'});});tr.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();pick(r);$('hf-detail').scrollIntoView({behavior:'smooth',block:'start'});}});body.appendChild(tr)}$('hf-results').replaceChildren(body);}
 const add=(host,tag,cls,txt)=>{const e=document.createElement(tag);if(cls)e.className=cls;e.textContent=txt;host.appendChild(e);return e;};
+let stopCurrentSchematic=()=>{};
+function attachSchematic(parent,r){
+ stopCurrentSchematic();
+ const peak=r[7],release=r[6];
+ const root=add(parent,'section','hf-simulator','');
+ root.dataset.case=`${r[0]}:${r[1]}:${r[2]}`;
+ root.innerHTML=`
+ <div class="hfs-kicker">▶ HUDDLES' SEPARATION SIMULATOR <span class="hfs-badge">SCHEMATIC · NOT REAL TRACKING</span></div>
+ <h5>WATCH THE GAP CHANGE</h5>
+ <p class="hfs-explain">This animation <strong>illustrates</strong> a change between two calculated summary values: peak nearest-defender separation and separation at pass release. The in-between positions and distances are interpolated for explanation; they were <strong>not observed</strong> as a player-by-player trajectory.</p>
+ <svg class="hfs-field" viewBox="0 0 600 220" role="img" aria-label="Illustrative gap between receiver and defender, not real player coordinates">
+ <defs><pattern id="hfs-grain" width="48" height="48" patternUnits="userSpaceOnUse"><path d="M48 0V48M0 48H48" stroke="#5b8e70" stroke-width="1" opacity=".5"/></pattern></defs>
+ <rect x="0" y="0" width="600" height="220" rx="12" fill="#0b3528"/><rect x="0" y="0" width="600" height="220" fill="url(#hfs-grain)" opacity=".45"/>
+ <text x="22" y="26" fill="#ffe1a6" font-family="monospace" font-size="12" font-weight="bold">SCHEMATIC SEPARATION · NOT A FIELD POSITION PLOT</text>
+ <line id="hfs-threshold" x1="300" x2="300" y1="48" y2="173" stroke="#ffce39" stroke-width="3" stroke-dasharray="5 5"/>
+ <text id="hfs-thresh-label" x="300" y="45" fill="#ffdb79" font-family="monospace" font-size="11" text-anchor="middle">3 YD</text>
+ <line id="hfs-gapline" x1="105" y1="113" x2="390" y2="113" stroke="#f7e5b1" stroke-width="5" stroke-dasharray="10 6" stroke-linecap="round"/>
+ <circle cx="105" cy="113" r="23" fill="#ffcb30" stroke="#133a2a" stroke-width="4"/>
+ <circle id="hfs-defender" cx="390" cy="113" r="23" fill="#d596dc" stroke="#122f25" stroke-width="4"/>
+ <text id="hfs-position" x="105" y="119" text-anchor="middle" font-family="monospace" font-weight="bold" font-size="14" fill="#163b2b">WR</text>
+ <text x="105" y="159" text-anchor="middle" fill="#fff0d4" font-family="monospace" font-size="12">RECEIVER</text>
+ <text id="hfs-def-label" x="390" y="159" text-anchor="middle" fill="#fff0d4" font-family="monospace" font-size="12">DEFENDER</text>
+ <text id="hfs-distance" x="303" y="205" text-anchor="middle" fill="#ffcf3d" font-family="monospace" font-size="17" font-weight="bold">—</text>
+ </svg>
+ <div class="hfs-meta"><strong id="hfs-state">PEAK GAP · OBSERVED SUMMARY</strong><span id="hfs-release-status">WINDOW CLOSURE STATUS</span></div>
+ <div class="hfs-controls"><button type="button" id="hfs-play">▶ PLAY SCHEMATIC</button><button type="button" id="hfs-pause">Ⅱ PAUSE</button><button type="button" id="hfs-reset">↺ RESTART</button><label>ILLUSTRATIVE PROGRESS <input type="range" id="hfs-progress" min="0" max="100" value="0" step="1" aria-label="Illustrative progress from observed peak to observed release"/></label></div>
+ <div class="hfs-facts"><span><b id="hfs-peak">—</b>PEAK GAP · OBSERVED</span><span><b id="hfs-release">—</b>RELEASE GAP · OBSERVED</span><span><b id="hfs-longest">—</b>LONGEST QUALIFYING OPEN WINDOW</span><span><b id="hfs-total">—</b>TOTAL QUALIFYING OPEN TIME</span></div>
+ <p class="hfs-disclaimer">⚠ <strong>READ BEFORE INTERPRETING:</strong> This is a metric-based teaching animation, not a reconstruction of player positions or a frame-by-frame NFL replay. Progress is normalized, not actual game time. A 3-yard nearest-defender gap is a research proxy, not evidence of a safe throwing lane or a receiver being targeted.</p>`;
+ const el=id=>root.querySelector('#'+id);
+ const valid=Number.isFinite(peak)&&Number.isFinite(release);
+ const display=v=>Number.isFinite(v)?v.toFixed(2)+' yd':'NOT AVAILABLE';
+ el('hfs-peak').textContent=display(peak);el('hfs-release').textContent=display(release);
+ el('hfs-longest').textContent=Number.isFinite(r[8])?r[8].toFixed(2)+' s':'—';
+ el('hfs-total').textContent=Number.isFinite(r[12])?r[12].toFixed(2)+' s':'—';
+ el('hfs-position').textContent=r[3];
+ el('hfs-release-status').textContent=r[9]?'QUALIFYING WINDOW CLOSED BEFORE RELEASE':'NO QUALIFYING CLOSURE BEFORE RELEASE';
+ let progress=0,playing=false,frameId=null,last=null;
+ const maxYards=Math.max(6,Number.isFinite(peak)?peak:0,Number.isFinite(release)?release:0)+1;
+ const xFor=v=>105+Math.max(0,Math.min(1,v/maxYards))*390;
+ const tx=xFor(3);
+ el('hfs-threshold').setAttribute('x1',tx.toFixed(2));el('hfs-threshold').setAttribute('x2',tx.toFixed(2));
+ el('hfs-thresh-label').setAttribute('x',tx.toFixed(2));
+ function draw(p){
+  progress=Math.max(0,Math.min(100,p));el('hfs-progress').value=Math.round(progress);
+  if(!valid){el('hfs-distance').textContent='NO DISTANCE DATA';el('hfs-state').textContent='SUMMARY DATA UNAVAILABLE';return;}
+  const interpolated=peak+(release-peak)*progress/100,x=xFor(interpolated);
+  el('hfs-defender').setAttribute('cx',x.toFixed(2));el('hfs-def-label').setAttribute('x',x.toFixed(2));el('hfs-gapline').setAttribute('x2',x.toFixed(2));
+  el('hfs-distance').textContent=(progress===0?'MEASURED PEAK: ':progress===100?'MEASURED RELEASE: ':'ILLUSTRATED GAP: ')+interpolated.toFixed(2)+' YD';
+  el('hfs-state').textContent=progress===0?'PEAK GAP · OBSERVED SUMMARY':progress===100?'AT PASS RELEASE · OBSERVED SUMMARY':'BETWEEN ENDPOINTS · ILLUSTRATIVE ONLY';
+  el('hfs-gapline').setAttribute('stroke',interpolated>=3?'#ffce39':'#ff8760');
+ }
+ function pause(){playing=false;last=null;if(frameId!==null){cancelAnimationFrame(frameId);frameId=null;}}
+ function tick(t){if(!playing)return;if(last!==null)progress=Math.min(100,progress+(t-last)/27);last=t;draw(progress);if(progress>=100){pause();return;}frameId=requestAnimationFrame(tick)}
+ const play=()=>{if(!valid)return;if(progress>=100)draw(0);if(playing)return;playing=true;last=null;frameId=requestAnimationFrame(tick)};
+ el('hfs-play').addEventListener('click',play);el('hfs-pause').addEventListener('click',pause);
+ el('hfs-reset').addEventListener('click',()=>{pause();draw(0)});
+ el('hfs-progress').addEventListener('input',e=>{pause();draw(Number(e.target.value))});
+ if(!valid)el('hfs-play').disabled=true;
+ stopCurrentSchematic=pause;draw(0);
+}
 function pick(r){selected=rKey(r);const d=$('hf-detail');d.replaceChildren();add(d,'div','hf-kicker',`CASE FILE · WEEK ${r[11]} · GAME ${r[0]} · PLAY ${r[1]}`);add(d,'h4','',r[2].toUpperCase()+' · '+r[4]+' VS '+r[5]);
 add(d,'p','',`POSITION ${r[3]} · WHOLE-PLAY PASS RESULT: ${passes[r[10]]||r[10]} · ${r[9]?'WINDOW CLOSED BEFORE RELEASE':'NO QUALIFYING CLOSURE BEFORE RELEASE'}`);
 const grid=add(d,'div','hf-metricbar-grid','');for(const [v,l] of [[fmt(r[7])+' yd','PEAK SEPARATION'],[fmt(r[6])+' yd','AT RELEASE'],[fmt(r[8])+' s','LONGEST OPEN WINDOW'],[fmt(r[12])+' s','TOTAL QUALIFYING OPEN TIME']]){const box=add(grid,'div','hf-pill','');add(box,'strong','',v);add(box,'span','',l);}
 if(r[13]!==null)add(d,'p','',`LAST WINDOW CLOSED ${fmt(r[13])} SECONDS BEFORE RELEASE · ${r[14]} OBSERVED FRAMES AT 10 HZ.`);
 const bar=add(d,'div','hf-bars','');const mx=Math.max(6,r[7]??0,r[6]??0)+1;for(const [k,label,val] of [['peak','PEAK NEAREST DEFENDER',r[7]],['release','AT PASS RELEASE',r[6]]]){const row=add(bar,'div','', '');const l=add(row,'label','',label);add(l,'span','',fmt(val)+' yd');const track=add(row,'div','hf-track '+k,'');const fill=add(track,'div','hf-fill','');fill.style.width=(Math.max(0,(val||0)/mx)*100).toFixed(1)+'%';const mark=add(track,'div','hf-threshold','');mark.style.left=(3/mx*100).toFixed(2)+'%';}add(d,'p','','DASHED WHITE MARK = EXPERIMENTAL 3-YARD GAP. BARS SHOW TWO SUMMARY DISTANCES, NOT A FRAME-BY-FRAME TRAJECTORY.');
 const description=desc[r[0]+':'+r[1]];if(description)add(d,'p','',`OFFICIAL PLAY DESCRIPTION: ${description}`);
+attachSchematic(d,r);
 const featured=(r[0]==='2021090900'&&r[1]===1425&&r[2]==='Blake Jarwin')?'jarwin':(r[0]==='2021091206'&&r[1]===2111&&r[2]==='Parris Campbell')?'campbell':null;
 if(featured){const b=add(d,'button','','▶ WATCH THIS ACTUAL TRACKING REPLAY');b.addEventListener('click',()=>{window.HUT_SET_REPLAY?.(featured);document.getElementById('film-room')?.scrollIntoView({behavior:'smooth',block:'center'});});}
-else add(d,'p','hf-warning','METRIC-ONLY CASE FILE. The published analysis contains aggregate metrics for this observation but not its individual tracking-coordinate timeline; no animation is invented.');
+else add(d,'p','hf-warning','The simulator above uses the observed peak and release separation values as its endpoints. Intermediate distances, positions, and progress are illustrative, NOT measured tracking data. To generate a true NFL play replay for this case, we would need its original frame-by-frame receiver and defender coordinates.');
+const matchIndex=filtered.findIndex(x=>rKey(x)===selected);if(matchIndex!==-1){
+ const nav=add(d,'div','hf-case-nav','');const prev=add(nav,'button','','← PREVIOUS CASE');prev.type='button';prev.disabled=matchIndex===0;const index=add(nav,'span','',`CASE ${matchIndex+1} OF ${filtered.length.toLocaleString('en-US')}`);const next=add(nav,'button','','NEXT CASE →');next.type='button';next.disabled=matchIndex>=filtered.length-1;
+ const nextCase=i=>{page=Math.floor(i/Number($('hf-page-size').value));pick(filtered[i]);d.scrollIntoView({behavior:'smooth',block:'start'});};
+ prev.addEventListener('click',()=>nextCase(matchIndex-1));next.addEventListener('click',()=>nextCase(matchIndex+1));
+}
 renderList();}
 function goFilm(){const b=document.querySelector('[data-hut="film"]');b?.click();}
 window.HUT_FILM_PICK=r=>{goFilm();team.value=r[4];games();game.value=r[0];players();player.value=r[2];status.value='all';query.value=String(r[1]);selection();pick(r);wrapper.scrollIntoView({behavior:'smooth',block:'start'});};
@@ -608,6 +712,13 @@ window.HUT_FILM_PICK=r=>{goFilm();team.value=r[4];games();game.value=r[0];player
 const style=document.createElement('style');style.textContent='#hx-body tr{cursor:pointer}#hx-body tr:hover{background:#ffe08d!important}';document.head.appendChild(style);
 team.addEventListener('change',()=>{game.value='';player.value='';games();players();selection();});game.addEventListener('change',()=>{player.value='';players();selection();});player.addEventListener('change',selection);status.addEventListener('change',selection);query.addEventListener('input',selection);sort.addEventListener('change',selection);
 $('hf-prev').addEventListener('click',()=>{page--;renderList()});$('hf-next').addEventListener('click',()=>{page++;renderList()});
+$('hf-page-size').addEventListener('change',()=>{page=0;renderList()});
+const jump=()=>{const desired=parseInt($('hf-jump').value,10);if(Number.isFinite(desired)){page=Math.max(0,desired-1);renderList();}};
+$('hf-jump-btn').addEventListener('click',jump);$('hf-jump').addEventListener('keydown',e=>{if(e.key==='Enter')jump()});
+const showAll=()=>{team.value='';games();game.value='';players();player.value='';status.value='all';query.value='';sort.value='longest';selection();};
+$('hf-reset-all').addEventListener('click',showAll);
+$('hf-filter-closed').addEventListener('click',()=>{showAll();status.value='closed';selection();});
+$('hf-open-library').addEventListener('click',()=>{showAll();wrapper.scrollIntoView({behavior:'smooth',block:'start'});});
 games();players();selection();const original=rows.find(r=>r[0]==='2021090900'&&r[1]===1425&&r[2]==='Blake Jarwin');if(original)pick(original);
 })();
 </script></body></html>

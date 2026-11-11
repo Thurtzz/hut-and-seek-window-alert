@@ -9,9 +9,12 @@ The fine print: 3 yards is our working definition of "open," not an official one
 
 ## 🎬 Explore the interactive site
 
-- **Film Room replays:** watch two real tracking replays, Blake Jarwin (DAL vs TB) and Parris Campbell (IND vs SEA), with the players moving on the field, a synced separation chart, and Play/Pause controls.
-- **Complete case library:** search and filter all 34,368 receiver-play observations from 122 games and all 32 teams by team, game, player, or window status, and open any one as a detailed case file. Plays with frame-by-frame data in the site are animated; the rest show their computed metrics.
+- **Authentic tracking replays:** two featured plays, Blake Jarwin (DAL vs TB) and Parris Campbell (IND vs SEA), replay **actual frame-by-frame NFL tracking data** with synchronized separation charts and Play/Pause controls.
+- **All-cases simulator:** every one of the 34,368 receiver-play observations can be opened in the Film Room as a playable separation-gap simulation (Play, Pause, Restart, progress) comparing peak separation, separation at release, and the 3-yard threshold. These simulations are **illustrative only**: they animate between each case's computed metrics and are **not** reconstructions of real player movement.
+- **Complete case explorer:** filter all 122 games and 32 teams by team, game, receiver, and window status, open any case file, and step between observations.
 - **Team explorer and Huddles' Takeaway:** compare window closures by team and by position (WR, TE, RB).
+
+All numbers in the site come from the same analysis as `output/window_metrics.csv`; only the two featured replays use real player coordinates.
 
 ![Window Alert tracking replay](output/window_alert.png)
 

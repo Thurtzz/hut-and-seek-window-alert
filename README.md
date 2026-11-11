@@ -37,3 +37,7 @@ Or locally, with the organizers' dataset:
 pip install -r requirements.txt
 python window_alert.py --data /path/to/nfl-big-data-bowl-regional-event-data/data
 ```
+
+## © Copyright
+
+© 2026 Tiffany Hurtado. All rights reserved. The code, website, design, artwork and analysis in this repository may not be copied, reused or republished without written permission. See [LICENSE](LICENSE). The underlying NFL data belongs to its respective owners and is not included here.
